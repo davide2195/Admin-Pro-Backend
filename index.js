@@ -11,18 +11,18 @@ const app = express();
 // Conf Cors
 app.use(cors())
 
+// Lectura y parseo del body
+app.use( express.json() );
+
+
 // Database
 dbConnection();
 
 
 //Routes
-app.get( '/', (req, res) => {
-    
-    res.json({
-        ok: true,
-        msg: 'Hi World',
-    })
-} );
+app.use( '/api/usuarios', require('./routes/users') );
+app.use( '/api/login', require('./routes/auth') );
+
 
 
 app.listen( process.env.PORT, () => {
