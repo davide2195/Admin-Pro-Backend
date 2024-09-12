@@ -17,7 +17,7 @@ const UsuarioSchema = Schema({
         required: true
     },
     img: {
-        type: String,
+        type: String     
     },
     role: {
         type: String,
