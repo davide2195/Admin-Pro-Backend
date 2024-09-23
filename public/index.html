@@ -1,47 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-critters-container>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Googl-Signin</title>
-</head>
-<body>
-    <h1>Google</h1> 
-    
-    <div id="buttonDiv"></div>
+  <meta charset="utf-8">
+  <title>AdminPro</title>
+  <base href="/">
 
-    <script src="https://accounts.google.com/gsi/client" async></script>
-    <script>
+  <script src="https://accounts.google.com/gsi/client" async></script>
 
-      var url = 'http://localhost:4000/api/login/google';
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Favicon icon -->
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon.png">
+
+  <!-- Bootstrap Core CSS -->
+  <link href="./assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="./assets/css/style.css" rel="stylesheet">
+  <!-- You can change the theme colors from here -->
+  <link id="theme" rel="stylesheet">
+
+<link rel="stylesheet" href="styles-U73CBZWD.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles-U73CBZWD.css"></noscript><link rel="modulepreload" href="chunk-JZAOEHVI.js"></head>
+<body class="fix-header card-no-border fix-sidebar">
+
+  <!-- ============================================================== -->
+  <!-- Preloader - style you can find in spinners.css -->
+  <!-- ============================================================== -->
+  <div class="preloader">
+    <div class="loader">
+        <div class="loader__figure"></div>
+        <p class="loader__label">Admin Pro</p>
+    </div>
+  </div>
+  <!-- ============================================================== -->
+  <!-- Main wrapper - style you can find in pages.scss -->
+  <!-- ============================================================== -->
+
+  <app-root></app-root>
 
 
-        function handleCredentialResponse(response) {
-          // console.log("Encoded JWT ID token: " + response.credential);
-          fetch( url, {
-            method: 'POST',
-            headers:{ 'Content-Type': 'application/json' },
-            body: JSON.stringify({ token: response.credential })
-          })
-          .then( resp => resp.json() )
-          .then( data => console.log('nuestro server', data ))
-          .catch( console.log)
-        }
+  <!-- ============================================================== -->
+  <!-- All Jquery -->
+  <!-- ============================================================== -->
+  <script src="./assets/plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap tether Core JavaScript -->
+  <script src="./assets/plugins/bootstrap/js/popper.min.js"></script>
+  <script src="./assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+  <!-- slimscrollbar scrollbar JavaScript -->
+  <script src="./assets/js/perfect-scrollbar.jquery.min.js"></script>
+  <!--Wave Effects -->
+  <script src="./assets/js/waves.js"></script>
+  <!--Menu sidebar -->
+  <script src="./assets/js/sidebarmenu.js"></script>
+  <!--stickey kit -->
+  <script src="./assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
+  <script src="./assets/plugins/sparkline/jquery.sparkline.min.js"></script>
+  <!--Custom JavaScript -->
+  <script src="./assets/js/custom.js"></script>
+  <!-- ============================================================== -->
 
-        window.onload = function () {
-          google.accounts.id.initialize({
-            client_id: '133857938445-9bq372g616req372afj7mbg07aj9tkfb.apps.googleusercontent.com',
-            callback: handleCredentialResponse
-          });
-          google.accounts.id.renderButton(
-            document.getElementById("buttonDiv"),
-            { theme: "outline", size: "large" }  // customization attributes
-          );
-          google.accounts.id.prompt(); // also display the One Tap dialog
-        }
-      </script>
-     
 
-    
-</body>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+<script src="polyfills-SCHOHYNV.js" type="module"></script><script src="main-L5RNGKPG.js" type="module"></script></body>
 </html>
